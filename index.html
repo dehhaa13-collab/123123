@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Бриф цільової аудиторії</title>
+    <meta name="description" content="Заповніть бриф для створення сценаріїв Reels, які точно потраплять у вашу аудиторію ❤️">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Animated Background Orbs -->
+<div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="grain-overlay"></div>
+</div>
+
+<main class="container">
+
+    <!-- Header -->
+    <header class="form-header" id="formHeader">
+        <div class="logo-icon">🎯</div>
+        <h1>Бриф цільової аудиторії</h1>
+        <p class="description">Заповніть форму максимально чесно та детально. Чим точніші відповіді — тим точніше контент потрапить у вашу аудиторію. Якщо у вас кілька сегментів — заповніть окрему форму для кожного ❤️</p>
+
+        <!-- Progress Bar -->
+        <div class="progress-wrapper">
+            <div class="progress-bar" id="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="27" aria-valuenow="0">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-meta">
+                <span class="progress-text" id="progressText">0 з 27 питань</span>
+                <span class="autosave-indicator" id="autosaveIndicator">Збережено</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Form -->
+    <form id="briefForm" novalidate>
+
+        <!-- ══════ Секція 0: Назва сегмента ══════ -->
+        <fieldset class="form-section">
+            <legend class="section-title">Основна інформація</legend>
+
+            <div class="form-group">
+                <label for="q0"><span class="q-number">👤</span> ПІБ (Прізвище, Ім'я, По батькові) <span class="required">*</span></label>
+                <input type="text" id="q0" name="full_name" placeholder="Введіть ваше ПІБ..." required>
+                <span class="field-error" id="q0-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q1"><span class="q-number">1</span> Назва сегмента / проєкту <span class="required">*</span></label>
+                <input type="text" id="q1" name="segment_name" placeholder="Наприклад: жінки 25-35, мами у декреті..." required>
+                <span class="field-error" id="q1-error"></span>
+            </div>
+        </fieldset>
+
+        <!-- ══════ Секція 1: Клієнт / Проєкт ══════ -->
+        <fieldset class="form-section">
+            <legend class="section-title">01. Клієнт / Проєкт</legend>
+
+            <div class="form-group">
+                <label for="q2"><span class="q-number">2</span> Назва проєкту або клієнта <span class="required">*</span></label>
+                <span class="sub-label">Наприклад: онлайн-школа, продукт, експерт</span>
+                <input type="text" id="q2" name="project_name" placeholder="Назва вашого проєкту..." required>
+                <span class="field-error" id="q2-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q3"><span class="q-number">3</span> Що продає / що за продукт? <span class="required">*</span></label>
+                <span class="sub-label">Опишіть в 1–2 реченнях</span>
+                <textarea id="q3" name="product_description" placeholder="Опишіть ваш продукт або послугу..." required></textarea>
+                <span class="char-count" data-for="q3"></span>
+                <span class="field-error" id="q3-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q4"><span class="q-number">4</span> Який конкретний результат отримує клієнт? <span class="required">*</span></label>
+                <span class="sub-label">Не «курс з харчування», а «мінус 8 кг за 2 місяці без дієт»</span>
+                <textarea id="q4" name="client_result" placeholder="Конкретний результат, який отримує клієнт..." required></textarea>
+                <span class="char-count" data-for="q4"></span>
+                <span class="field-error" id="q4-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q5"><span class="q-number">5</span> Чим відрізняється від конкурентів? <span class="required">*</span></label>
+                <span class="sub-label">Чому купувати саме тут?</span>
+                <textarea id="q5" name="usp" placeholder="Ваші унікальні переваги..." required></textarea>
+                <span class="char-count" data-for="q5"></span>
+                <span class="field-error" id="q5-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q6"><span class="q-number">6</span> Вартість / формат</label>
+                <span class="sub-label">Ціна, разова/підписка, онлайн/офлайн</span>
+                <textarea id="q6" name="price_format" placeholder="Вкажіть вартість та формат вашого продукту..."></textarea>
+                <span class="char-count" data-for="q6"></span>
+            </div>
+        </fieldset>
+
+        <!-- ══════ Секція 2: Хто ця людина ══════ -->
+        <fieldset class="form-section">
+            <legend class="section-title">02. Хто ця людина</legend>
+
+            <div class="form-group">
+                <label for="q7"><span class="q-number">7</span> Портрет: хто ця людина? <span class="required">*</span></label>
+                <span class="sub-label">Стать, вік, місто, професія, спосіб життя</span>
+                <textarea id="q7" name="portrait" placeholder="Опишіть вашого ідеального клієнта..." required></textarea>
+                <span class="char-count" data-for="q7"></span>
+                <span class="field-error" id="q7-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q8"><span class="q-number">8</span> Як виглядає його звичайний день? <span class="required">*</span></label>
+                <span class="sub-label">Ранок, робота, вечір — чим зайнятий, де буває</span>
+                <textarea id="q8" name="daily_routine" placeholder="Опишіть типовий день вашого клієнта..." required></textarea>
+                <span class="char-count" data-for="q8"></span>
+                <span class="field-error" id="q8-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q9"><span class="q-number">9</span> Де він проводить час у соцмережах?</label>
+                <span class="sub-label">Instagram, TikTok, YouTube — що дивиться, на кого підписаний</span>
+                <textarea id="q9" name="social_media" placeholder="Які соцмережі використовує, що дивиться..."></textarea>
+                <span class="char-count" data-for="q9"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q10"><span class="q-number">10</span> Ким він себе вважає? Який образ будує? <span class="required">*</span></label>
+                <span class="sub-label">«Я турботлива мама», «Я успішний підприємець», «Я людина, що шукає»</span>
+                <textarea id="q10" name="self_image" placeholder="Як клієнт себе позиціонує..." required></textarea>
+                <span class="char-count" data-for="q10"></span>
+                <span class="field-error" id="q10-error"></span>
+            </div>
+        </fieldset>
+
+        <!-- ══════ Секція 3: Болі та проблеми ══════ -->
+        <fieldset class="form-section">
+            <legend class="section-title">03. Болі та проблеми</legend>
+
+            <div class="form-group">
+                <label for="q11"><span class="q-number">11</span> Головний біль — що його реально мучить прямо зараз? <span class="required">*</span></label>
+                <span class="sub-label">Не симптом, а глибинний біль. «Я втомився(лась) від...»</span>
+                <textarea id="q11" name="main_pain" placeholder="Головний біль вашого клієнта..." required></textarea>
+                <span class="char-count" data-for="q11"></span>
+                <span class="field-error" id="q11-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q12"><span class="q-number">12</span> Чого він боїться? Що не дає спати? <span class="required">*</span></label>
+                <span class="sub-label">Страхи, тривоги, «а раптом...»</span>
+                <textarea id="q12" name="fears" placeholder="Страхи та тривоги клієнта..." required></textarea>
+                <span class="char-count" data-for="q12"></span>
+                <span class="field-error" id="q12-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q13"><span class="q-number">13</span> Що вже пробував і не спрацювало? <span class="required">*</span></label>
+                <span class="sub-label">Які рішення пробував до цього? Чому розчарувався?</span>
+                <textarea id="q13" name="tried_before" placeholder="Що клієнт вже пробував..." required></textarea>
+                <span class="char-count" data-for="q13"></span>
+                <span class="field-error" id="q13-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q14"><span class="q-number">14</span> У чому соромиться зізнатися навіть собі?</label>
+                <span class="sub-label">Приховані болі — те, що не кажуть вголос</span>
+                <textarea id="q14" name="hidden_pain" placeholder="Приховані болі клієнта..."></textarea>
+                <span class="char-count" data-for="q14"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q15"><span class="q-number">15</span> Що його дратує в цій темі / ринку? <span class="required">*</span></label>
+                <span class="sub-label">Що бісить в інших продуктах, експертах, порадах?</span>
+                <textarea id="q15" name="irritation" placeholder="Що дратує клієнта в ніші..." required></textarea>
+                <span class="char-count" data-for="q15"></span>
+                <span class="field-error" id="q15-error"></span>
+            </div>
+        </fieldset>
+
+        <!-- ══════ Секція 4: Тригери та мотивація ══════ -->
+        <fieldset class="form-section">
+            <legend class="section-title">04. Тригери та мотивація</legend>
+
+            <div class="form-group">
+                <label for="q16"><span class="q-number">16</span> Чого він хоче насправді? <span class="required">*</span></label>
+                <span class="sub-label">Бажання за бажанням. Не «схуднути», а «подобатися собі у дзеркалі»</span>
+                <textarea id="q16" name="real_desire" placeholder="Справжнє бажання клієнта..." required></textarea>
+                <span class="char-count" data-for="q16"></span>
+                <span class="field-error" id="q16-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q17"><span class="q-number">17</span> Що відбувається в його житті в момент пошуку рішення? <span class="required">*</span></label>
+                <span class="sub-label">Тригерний момент — що сталося, що змусило шукати?</span>
+                <textarea id="q17" name="trigger_moment" placeholder="Тригерний момент клієнта..." required></textarea>
+                <span class="char-count" data-for="q17"></span>
+                <span class="field-error" id="q17-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q18"><span class="q-number">18</span> Як виглядає його життя після вирішення проблеми? <span class="required">*</span></label>
+                <span class="sub-label">Картинка мрії — що зміниться, як він себе почуває</span>
+                <textarea id="q18" name="dream_life" placeholder="Життя клієнта після вирішення проблеми..." required></textarea>
+                <span class="char-count" data-for="q18"></span>
+                <span class="field-error" id="q18-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q19"><span class="q-number">19</span> Яку емоцію він хоче відчувати?</label>
+                <span class="sub-label">Впевненість, спокій, гордість, свободу, визнання...</span>
+                <textarea id="q19" name="desired_emotion" placeholder="Бажана емоція клієнта..."></textarea>
+                <span class="char-count" data-for="q19"></span>
+            </div>
+        </fieldset>
+
+        <!-- ══════ Секція 5: Заперечення ══════ -->
+        <fieldset class="form-section">
+            <legend class="section-title">05. Заперечення</legend>
+
+            <div class="form-group">
+                <label for="q20"><span class="q-number">20</span> Чому він не купить прямо зараз? <span class="required">*</span></label>
+                <span class="sub-label">«Дорого», «немає часу», «не вірю що допоможе», «вже пробував»...</span>
+                <textarea id="q20" name="objections" placeholder="Основні заперечення клієнта..." required></textarea>
+                <span class="char-count" data-for="q20"></span>
+                <span class="field-error" id="q20-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q21"><span class="q-number">21</span> Чому не довіряє? <span class="required">*</span></label>
+                <span class="sub-label">Що заважає повірити експерту / продукту?</span>
+                <textarea id="q21" name="distrust" placeholder="Причини недовіри клієнта..." required></textarea>
+                <span class="char-count" data-for="q21"></span>
+                <span class="field-error" id="q21-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q22"><span class="q-number">22</span> Що він зробить замість покупки?</label>
+                <span class="sub-label">Продовжить страждати? Знайде безкоштовне? Піде до конкурента?</span>
+                <textarea id="q22" name="alternative_action" placeholder="Що зробить клієнт замість покупки..."></textarea>
+                <span class="char-count" data-for="q22"></span>
+            </div>
+        </fieldset>
+
+        <!-- ══════ Секція 6: Під Reels ══════ -->
+        <fieldset class="form-section">
+            <legend class="section-title">06. Під Reels</legend>
+
+            <div class="form-group">
+                <label for="q23"><span class="q-number">23</span> Що змусить його зупинити скрол? <span class="required">*</span></label>
+                <span class="sub-label">Який візуал, фраза, ситуація — він впізнає себе</span>
+                <textarea id="q23" name="scroll_stop" placeholder="Що зупинить скрол клієнта..." required></textarea>
+                <span class="char-count" data-for="q23"></span>
+                <span class="field-error" id="q23-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q24"><span class="q-number">24</span> Фраза, яку він говорить собі або чує щодня</label>
+                <span class="sub-label">Внутрішній монолог вашої ЦА</span>
+                <textarea id="q24" name="inner_monologue" placeholder="Внутрішній діалог клієнта..."></textarea>
+                <span class="char-count" data-for="q24"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q25"><span class="q-number">25</span> Який контент викликає у нього довіру? <span class="required">*</span></label>
+                <span class="sub-label">Експертний, до/після, лайфстайл, гумор, факти, історії?</span>
+                <textarea id="q25" name="trust_content" placeholder="Тип контенту, який викликає довіру..." required></textarea>
+                <span class="char-count" data-for="q25"></span>
+                <span class="field-error" id="q25-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="q26"><span class="q-number">26</span> Що його відштовхує / дратує в контенті?</label>
+                <span class="sub-label">Що він скіпає, що викликає недовіру?</span>
+                <textarea id="q26" name="content_irritation" placeholder="Що дратує клієнта в контенті..."></textarea>
+                <span class="char-count" data-for="q26"></span>
+            </div>
+        </fieldset>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-text">
+                <span>Надіслати бриф</span>
+                <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+            </span>
+            <span class="btn-loader hidden">
+                <svg class="spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10" opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" opacity="1"/></svg>
+                <span>Надсилаємо...</span>
+            </span>
+        </button>
+    </form>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="status-message success hidden">
+        <div class="success-particles"></div>
+        <div class="success-icon-wrap">
+            <svg class="icon-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2>Дякуємо! 🎉</h2>
+        <p>Ваш бриф успішно надіслано.<br>Ми зв'яжемося з вами найближчим часом.</p>
+    </div>
+
+    <!-- Error Message -->
+    <div id="errorMessage" class="status-message error hidden">
+        <div class="error-icon-wrap">
+            <svg class="icon-error" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        </div>
+        <h2>Помилка</h2>
+        <p>Сталася помилка під час надсилання.<br>Перевірте з'єднання та спробуйте ще раз.</p>
+        <button class="btn-retry" id="retryBtn">Спробувати знову</button>
+    </div>
+
+</main>
+
+<footer class="site-footer">© 2026 — Бриф цільової аудиторії</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
