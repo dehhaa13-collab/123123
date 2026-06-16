@@ -4,7 +4,7 @@
  */
 document.addEventListener('DOMContentLoaded', () => {
     // Вставте ваш URL Google Apps Script сюди
-    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbylMVblk4YQALxBg1qMtV-fd7smNdeWYI_0FZMqAF-EoMHQKYa1l3aZ-oiE3rXIrDq8/exec';
+    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxQtSjoUStgtB-QtPQEEeRAPurIkn8DEz-5aa72ewtSPZaNr8crpFy-tNJ8aLdiuc9R/exec';
     const STORAGE_KEY = 'brief_ca_form_draft';
     const FETCH_TIMEOUT = 15000;
 
